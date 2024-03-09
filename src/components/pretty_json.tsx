@@ -10,10 +10,11 @@ const Pretty_JSON = () => {
     <div className="flex h-screen w-full">
       <textarea
         id="message_1"
-        className="m-9 h-5/6 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        className="m-9 h-2/3 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        placeholder="Your json here..."
       ></textarea>
 
-      <div className="flex h-full items-center">
+      <div className="flex h-full items-center justify-center">
         <Image
           src={arrow}
           alt="arrow image"
@@ -25,7 +26,7 @@ const Pretty_JSON = () => {
 
       <textarea
         id="message_2"
-        className="m-9 h-5/6 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        className="m-9 h-2/3 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
       ></textarea>
     </div>
   );
