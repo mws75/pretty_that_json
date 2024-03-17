@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import arrow from "~/../public/arrow-big-right.png";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { IoIosCopy } from "react-icons/io";
 
 const Pretty_JSON = () => {
   const [userInput, setUserInput] = useState("");
@@ -38,11 +41,13 @@ const Pretty_JSON = () => {
             />
           </div>
 
-          <textarea
-            id="message_2"
+          <SyntaxHighlighter
+            language="json"
+            style={oneDark}
             className="m-3 h-5/6 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-            value={prettyJson}
-          ></textarea>
+          >
+            {String(prettyJson).replace(/\n$/, "")}
+          </SyntaxHighlighter>
         </div>
         <div className="flex justify-center">
           <button
