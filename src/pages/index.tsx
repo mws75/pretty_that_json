@@ -18,7 +18,7 @@ export default function Home() {
         <div className="m-5 flex h-24 w-11/12 items-center justify-center rounded-lg border-indigo-600 bg-[#004369] text-4xl text-[#e5ddc8]">
           {"{JSON Pretty-fy}"}
         </div>
-        <div className="m-5 h-full w-11/12 overflow-y-auto border-2 border-white">
+        <div className="m-1 h-screen w-11/12 overflow-y-auto ">
           <Pretty_JSON />
         </div>
       </main>
