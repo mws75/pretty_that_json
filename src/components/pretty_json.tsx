@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import arrow from "~/../public/arrow-big-right.png";
+import arrow from "~/../public/icons8-arrow-100.png";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -26,6 +26,10 @@ const Pretty_JSON = () => {
     setPrettyJson("");
   };
 
+  const notify = () => {
+    alert("Copied to clipboard");
+  };
+
   return (
     <>
       <div className="flex h-screen w-full flex-col">
@@ -48,13 +52,21 @@ const Pretty_JSON = () => {
             />
           </div>
 
-          <SyntaxHighlighter
-            language="json"
-            style={oneDark}
-            className="m-3 h-5/6 w-5/6 rounded-lg border border-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-          >
-            {String(prettyJson).replace(/\n$/, "")}
-          </SyntaxHighlighter>
+          <div className="relative m-3 h-5/6 max-h-full w-5/6 overflow-y-auto rounded-lg border border-gray-50 bg-gray-900 text-gray-900">
+            <CopyToClipboard text={prettyJson} onCopy={() => notify()}>
+              <button className="absolute right-0 top-0 m-2 rounded  p-2 text-white">
+                <IoIosCopy size={24} />
+              </button>
+            </CopyToClipboard>
+            <SyntaxHighlighter
+              language="json"
+              style={oneDark}
+              className="!p=0 !m=0"
+              customStyle={{ padding: 0, margin: 0 }}
+            >
+              {String(prettyJson).replace(/\n$/, "")}
+            </SyntaxHighlighter>
+          </div>
         </div>
         <div className="flex justify-center">
           <button
